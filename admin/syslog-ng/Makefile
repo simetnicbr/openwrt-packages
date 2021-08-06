@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=syslog-ng
-PKG_VERSION:=3.31.2
+PKG_VERSION:=3.33.2
 PKG_RELEASE:=1
 
 PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
@@ -11,7 +11,7 @@ PKG_CPE_ID:=cpe:/a:balabit:syslog-ng
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/syslog-ng/syslog-ng/releases/download/$(PKG_NAME)-$(PKG_VERSION)/
-PKG_HASH:=2eeb8e0dbbcb556fdd4e50bc9f29bc8c66c9b153026f87caa7567bd3139c186a
+PKG_HASH:=0b786a06077b9150191d714f45a1b4b3792952cb58163a3af336f074da9fb14b
 
 PKG_BUILD_PARALLEL:=1
 PKG_INSTALL:=1
@@ -58,6 +58,7 @@ CONFIGURE_ARGS +=  \
 	--enable-json=yes \
 	--enable-http=yes \
 	--disable-smtp \
+	--disable-mqtt \
 	--disable-redis \
 	--disable-dependency-tracking \
 	--disable-python \
